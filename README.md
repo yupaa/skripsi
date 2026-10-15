@@ -1,4 +1,4 @@
-# Nowcasting Pertumbuhan PDB Sektoral dengan Google Trends
+# Pemodelan pada Pertumbuhan Ekonomi Per Sektor Lapangan Usaha dengan Data Google Trends
 
 ## Identitas
 
