@@ -38,10 +38,9 @@ Keterangan file yang tersedia saat ini:
 | `kode pemodelan.py` | Kode analisis dan pemodelan: membaca data, memisahkan prediktor dan target 17 sektor, menyiapkan skenario fitur, melakukan pemodelan SVR, serta analisis/visualisasi hasil. |
 | `kode artefak.py` | Aplikasi dashboard berbasis Streamlit yang menyediakan halaman Beranda, Visualisasi, dan Monthly Tracker. |
 | `.data fix pertumbuhan.xlsx` | Data kerja pemodelan. Kode membaca sheet bernama `yoy`. |
-| `model_terbaik(2).joblib` | Berkas model tersimpan. Untuk digunakan langsung oleh aplikasi, sesuaikan namanya menjadi `model_terbaik.joblib` atau ubah konfigurasi `MODEL_PATH` pada kode aplikasi. |
-| `df_tracker_final.xlsx` | Berkas data tracker yang dibaca oleh halaman Visualisasi. Berkas ini belum termasuk dalam file yang disediakan saat README dibuat. |
+| `model_terbaik.joblib` | Berkas model tersimpan. |
+| `df_tracker_final.xlsx` | Berkas data tracker yang dibaca oleh halaman Visualisasi. |
 
-> **Catatan:** Struktur di atas adalah susunan yang disarankan, bukan klaim bahwa semua folder tersebut sudah ada. Jika memakai folder `data/` atau `model/`, perbarui path pada kedua kode agar sesuai dengan struktur repositori.
 
 ## Sektor PDB
 
@@ -106,16 +105,3 @@ Versi pustaka yang kompatibel dapat berbeda tergantung lingkungan eksekusi. Untu
 ### Format input Monthly Tracker
 
 Template yang dibuat aplikasi memuat kolom `Periode`, empat variabel statistik resmi (`inflasi`, `jisdor`, `import`, `export`), dan topik Google Trends yang didefinisikan dalam kode aplikasi. Nilai input harus mengikuti format pengolahan yang dijelaskan pada aplikasi, bukan langsung menggunakan nilai mentah. Periksa kembali petunjuk di dashboard sebelum melakukan prediksi.
-
-## Catatan Penting Sebelum Mengunggah ke GitHub
-
-- **Periksa izin publikasi data.** Pastikan file Excel, hasil tracker, dan model boleh dibagikan. Jika tidak, keluarkan file tersebut dari repositori dan sediakan petunjuk untuk memperoleh atau menyiapkannya.
-- **Hindari file berukuran besar atau sensitif.** Gunakan `.gitignore` untuk mengecualikan data/model yang tidak boleh dipublikasikan.
-- **Samakan nama dan lokasi file.** Aplikasi saat ini mencari `model_terbaik.joblib` dan `df_tracker_final.xlsx` pada direktori yang sama dengan file aplikasi. Jika lokasi file diubah, perbarui path dalam kode.
-- **Periksa jumlah fitur Google Trends.** Daftar fitur pada aplikasi memiliki pemeriksaan jumlah fitur. Pastikan daftar kolom di data input cocok dengan fitur yang dibutuhkan model tersimpan.
-- **Model tersimpan harus cocok dengan kode dan pustaka.** Berkas `.joblib` dapat bergantung pada versi scikit-learn dan struktur objek yang digunakan saat pelatihan. Gunakan lingkungan yang sesuai dengan proses pelatihan.
-- **Jangan menganggap hasil sebagai data PDB resmi.** Keluaran dashboard adalah estimasi *nowcasting* dari model penelitian.
-
-## Lisensi dan Sitasi
-
-Tambahkan informasi lisensi apabila repositori akan dibagikan secara publik. Jika kode atau metode mengadaptasi penelitian/pustaka pihak lain, cantumkan referensi yang relevan pada bagian ini.
